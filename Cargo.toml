@@ -1,0 +1,49 @@
+[workspace]
+members = [
+    "crates/shellmind",
+    "crates/core",
+    "crates/ui",
+    "crates/tools",
+    "crates/extensions"
+]
+
+[workspace.package]
+name = "shellmind-workspace"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"] # Burayı güncelleyin
+license = "MIT"
+repository = "https://github.com/your-username/shellmind" # Burayı güncelleyin
+description = "An advanced, open-source, terminal-based AI assistant tool written entirely in Rust."
+
+[workspace.dependencies]
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+colored = "2"
+dotenv = "0.15"
+reqwest = { version = "0.11", features = ["json"] }
+config = { version = "0.13", features = ["toml"] }
+tonic = "0.11"
+prost = "0.12"
+prost-types = "0.12"
+tonic-build = { version = "0.11" }
+crossterm = "0.27"
+ansi_term = "0.12"
+figlet-rs = "0.1.0"
+skim = { version = "0.10.6", features = ["default-bindings"] }
+lopdf = "0.32"
+image = "0.25"
+libloading = "0.8"
+wasmtime = "20.0"
+oauth2 = "4.4"
+tokio-rate-limit = "0.2"
+
+[profile.dev]
+debug = 0
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = "symbols"

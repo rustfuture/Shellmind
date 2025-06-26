@@ -1,0 +1,10 @@
+[package]
+name = "tools"
+version = "0.2.0"
+edition = "2021"
+
+[dependencies]
+lopdf = { version = "0.31", optional = true }
+image = { version = "0.24", optional = true }
+
+# TODO: Add ffmpeg-cli or std::process::Command for video
