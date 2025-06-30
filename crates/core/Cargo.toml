@@ -10,8 +10,14 @@ config = "0.14"
 async-std = { version = "1.12", features = ["attributes"] }
 anyhow = "1.0"
 reqwest = { version = "0.11", features = ["json", "blocking"] }
+thiserror = "1.0"
+toml = "0.8"
+tonic = "0.11"
+prost = "0.12"
+http = "0.2"
 
-# TODO: Add Gemini gRPC support
+[build-dependencies]
+tonic-build = { version = "0.11", features = ["prost"] }
 
 [dev-dependencies]
-# For test automation
+

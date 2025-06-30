@@ -9,6 +9,8 @@ license = "MIT"
 [dependencies]
 core = { path = "../core" }
 ui = { path = "../ui" }
+cli = { path = "../cli" }
+dotenv = "0.15"
 
 # For async runtime and command execution
 tokio = { workspace = true, features = ["full"] }
@@ -17,4 +19,4 @@ serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 config = "0.14"
 
-# TODO: Add cargo-bundle for packaging
+

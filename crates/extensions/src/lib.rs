@@ -6,10 +6,20 @@ pub trait ShellmindPlugin {
     // TODO: Add more plugin methods
 }
 
-// TODO: Dynamic linking with libloading for .so/.dll plugins
-// TODO: WASM plugin support with wasmtime
+// Secure storage (placeholder)
+pub mod secure_storage {
+    // TODO: Implement secure storage using rust-crypto or a similar library
+    pub fn store_secret(_key: &str, _value: &str) -> Result<(), String> {
+        // Placeholder implementation
+        println!("Storing secret (placeholder): {}", _key);
+        Ok(())
+    }
 
-// TODO: Add oauth2 for authentication
-// TODO: Secure API-Key storage (rust-crypto or vault)
-// TODO: Service account token management
-// TODO: Rate-limiting with tokio::sync::Semaphore
+    pub fn retrieve_secret(_key: &str) -> Result<String, String> {
+        // Placeholder implementation
+        println!("Retrieving secret (placeholder): {}", _key);
+        Ok("retrieved_secret_placeholder".to_string())
+    }
+}
+
+

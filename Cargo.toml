@@ -17,6 +17,7 @@ repository = "https://github.com/your-username/shellmind" # Burayı güncelleyin
 description = "An advanced, open-source, terminal-based AI assistant tool written entirely in Rust."
 
 [workspace.dependencies]
+anyhow = "1.0"
 tokio = { version = "1", features = ["full"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"

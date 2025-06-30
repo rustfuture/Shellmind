@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package google.generativelanguage.v1beta;
+
+option go_package = "google.golang.org/genproto/googleapis/generativelanguage/v1beta;generativelanguage";
+option java_multiple_files = true;
+option java_outer_classname = "ModelProto";
+option java_package = "com.google.generativelanguage.v1beta";
+
+// Represents a single turn in a conversation.
+message Content {
+  // The role of the author of this content.
+  string role = 1;
+
+  // The parts of the content.
+  repeated Part parts = 2;
+}
+
+// A part of a conversation.
+message Part {
+  // A text part.
+  string text = 1;
+}
+
+// Request for the `GenerateContent` method.
+message GenerateContentRequest {
+  // The name of the model to use.
+  string model = 1;
+
+  // The content of the conversation.
+  repeated Content contents = 2;
+
+  // Configuration options for model generation.
+  GenerationConfig generation_config = 3;
+}
+
+// Response from the `GenerateContent` method.
+message GenerateContentResponse {
+  // Candidate responses from the model.
+  repeated Candidate candidates = 1;
+}
+
+// A response candidate generated from the model.
+message Candidate {
+  // The content of the candidate.
+  Content content = 1;
+}
+
+// Configuration options for model generation.
+message GenerationConfig {
+  // Controls the randomness of the output.
+  float temperature = 1;
+}
+
+service GenerativeService {
+  // Generates a response from the model.
+  rpc GenerateContent(GenerateContentRequest) returns (GenerateContentResponse);
+}

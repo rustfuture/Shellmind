@@ -3,6 +3,9 @@ name = "cli"
 version = "0.1.0"
 edition = "2021"
 
+[lib]
+name = "cli"
+
 [dependencies]
 core = { path = "../core" }
 ui = { path = "../ui" }
@@ -10,5 +13,6 @@ tokio = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }
 colored = { workspace = true }
+clap = { version = "4.0", features = ["derive"] }
+anyhow = { workspace = true }
 
-# ...diğer bağımlılıklar...
