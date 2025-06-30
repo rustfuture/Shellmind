@@ -1,4 +1,5 @@
 [workspace]
+resolver = "2"
 members = [
     "crates/shellmind",
     "crates/core",
@@ -23,7 +24,7 @@ serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 colored = "2"
 dotenv = "0.15"
-reqwest = { version = "0.11", features = ["json"] }
+reqwest = { version = "0.11", features = ["json", "stream"] } # 'stream' özelliği eklendi
 config = { version = "0.13", features = ["toml"] }
 tonic = "0.11"
 prost = "0.12"
@@ -39,6 +40,24 @@ libloading = "0.8"
 wasmtime = "20.0"
 oauth2 = "4.4"
 tokio-rate-limit = "0.2"
+indicatif = "0.17" # Buraya eklendi
+
+# Yeni eklenen bağımlılıklar
+dialoguer = "0.11"
+console = "0.15"
+tokio-tungstenite = "0.21"
+url = "2.5"
+walkdir = "2.4"
+glob = "0.3"
+ignore = "0.4"
+tokio-util = { version = "0.7", features = ["codec"] }
+dirs = "5.0"
+uuid = { version = "1.6", features = ["v4"] }
+chrono = { version = "0.4", features = ["serde"] }
+base64 = "0.21"
+ring = "0.17"
+rustyline = "12.0"
+regex = "1.10"
 
 [profile.dev]
 debug = 0
@@ -48,3 +67,7 @@ lto = "fat"
 codegen-units = 1
 panic = "abort"
 strip = "symbols"
+
+[workspace.dev-dependencies]
+tempfile = "3.8"
+mockito = "1.2"

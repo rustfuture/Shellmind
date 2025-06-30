@@ -13,6 +13,10 @@ tokio = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }
 colored = { workspace = true }
-clap = { version = "4.0", features = ["derive"] }
+clap = { version = "4.4", features = ["derive", "color"] } # Versiyon güncellendi ve 'color' özelliği eklendi
 anyhow = { workspace = true }
+dialoguer = { workspace = true }
+indicatif = { workspace = true }
+console = { workspace = true }
+rustyline = "12.0"
 

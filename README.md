@@ -13,7 +13,26 @@ Sonsuz man sayfalarına ve unutulmuş komutlara veda edin. Shellmind ile sadece 
 *   **Modüler ve Genişletilebilir Mimari:** 🏗️ Rust'ta temiz, modüler bir tasarımla inşa edilmiştir, bu da yeni işlevleri veya yapay zeka hizmetlerini genişletmeyi, özelleştirmeyi ve entegre etmeyi inanılmaz derecede kolaylaştırır.
 *   **Etkileşimli ve Etkileşimli Olmayan Modlar:** 💬 Sürekli yardım için sürekli bir etkileşimli oturuma katılın veya hızlı, tek seferlik sorgular için doğrudan CLI komutlarını kullanın.
 *   **Çapraz Platform Uyumluluğu:** 🌐 Linux, macOS ve Windows'ta sorunsuz çalışır ve geliştirme ortamlarınızda tutarlı bir deneyim sunar.
-*   **Gelişmiş Araçlar için Yer Tutucu:** 🛠️ Güvenli depolama ve multimedya işleme (örn. `ffmpeg` ile video) gibi gelecekteki geliştirmeler için temel modüller içerir.
+*   **Gelişmiş Komut Geçmişi:** 📜 Girdiğiniz komutları otomatik olarak kaydeder ve daha sonra kolayca erişmenizi sağlar.
+*   **Akıllı Otomatik Tamamlama:** 🧠 Dosya yolları ve komutlar için akıllı otomatik tamamlama ile yazma hızınızı artırır.
+*   **Kritik İşlemler için Onay Diyalogları:** 🛡️ Güvenliğinizi sağlamak için potansiyel olarak yıkıcı eylemlerden önce onay ister.
+*   **Hiyerarşik Bellek Yönetimi:** 🧠 Global, proje düzeyinde ve yerel bağlam dosyaları aracılığıyla uzun süreli belleği yönetir.
+
+## 🛠️ Yerleşik Araçlar
+
+Shellmind, çeşitli görevleri doğrudan terminalden gerçekleştirmek için bir dizi güçlü yerleşik araçla birlikte gelir:
+
+*   `ReadFileTool`: Belirtilen bir dosyanın içeriğini okur.
+*   `WriteFileTool`: Belirtilen bir dosyaya içerik yazar.
+*   `EditTool`: Bir dosyayı eski bir dizeyi yeni bir dizeyle değiştirerek düzenler.
+*   `LSTool`: Belirtilen bir dizinin içeriğini listeler.
+*   `GrepTool`: Belirtilen bir dizindeki dosyaların içeriğinde bir normal ifade deseni arar.
+*   `GlobTool`: Belirli glob desenleriyle eşleşen dosyaları bulur.
+*   `ShellTool`: Verilen bir kabuk komutunu yürütür.
+*   `WebFetchTool`: Belirtilen bir URL'den içerik çeker.
+*   `WebSearchTool`: Google Arama'yı (Gemini API aracılığıyla) kullanarak web araması yapar ve sonuçları döndürür.
+*   `MemoryTool`: Belirli bir bilgi veya gerçeği uzun süreli belleğinize kaydeder.
+*   `ReadManyFilesTool`: Yollar veya glob desenleriyle belirtilen birden çok dosyadan içerik okur.
 
 ## ⚡ Başlarken: Shellmind'i Serbest Bırakın
 
@@ -64,7 +83,7 @@ Doğal dil sorgularınızı yazın ve Shellmind ilgili kabuk komutlarını sağl
 
 #### Doğrudan Komut Satırı Sorguları
 
-Hızlı, tek seferlik komut üretimi için:
+Tek seferlik komut üretimi veya yapılandırma için:
 
 ```bash
 cargo run --bin shellmind prompt --text "mevcut dizindeki tüm dosyaları listele"

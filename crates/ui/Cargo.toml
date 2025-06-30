@@ -6,9 +6,9 @@ edition = "2021"
 [dependencies]
 figlet-rs = "0.1.5"
 ansi_term = "0.12.1"
-indicatif = "0.17.8"
-
-[dependencies.crossterm]
-version = "0.27.0"
+indicatif = { workspace = true }
+crossterm = { workspace = true }
+ratatui = "0.26"
+rustyline = "12.0"
 
 

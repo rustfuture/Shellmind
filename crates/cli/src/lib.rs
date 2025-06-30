@@ -1,7 +1,7 @@
 use clap::{Parser, Subcommand};
 use anyhow::Result;
 use core::{ShellmindError, ShellmindConfig, generate_command_rest, generate_command_grpc};
-use ui::{print_command, print_error, start_thinking_indicator, stop_thinking_indicator};
+use ui::CLIInterface;
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
@@ -41,7 +41,7 @@ enum ConfigCommands {
 }
 
 impl Cli {
-    pub async fn run(args: Vec<String>) -> Result<(), ShellmindError> {
+    pub async fn run(args: Vec<String>, ui: &CLIInterface) -> Result<(), ShellmindError> {
         let cli = Cli::parse_from(args);
 
         match &cli.command {
@@ -50,7 +50,7 @@ impl Cli {
             }
             Commands::Config { command } => match command {
                 ConfigCommands::Show => {
-                    let config = ShellmindConfig::load()?;
+                    let config = core::ConfigManager::load_configuration()?;
                     println!("Current Shellmind Configuration:");
                     println!("  API Key: {}", if config.api_key.is_empty() { "Not set" } else { "********" });
                     println!("  Model Name: {}", config.model_name);
@@ -61,7 +61,7 @@ impl Cli {
                     println!("  System Prompt: {}", config.system_prompt);
                 }
                 ConfigCommands::Set { key, value } => {
-                    let mut config = ShellmindConfig::load()?;
+                    let mut config = core::ConfigManager::load_configuration()?;
                     match key.as_str() {
                         "api_key" => config.api_key = value.clone(),
                         "model_name" => config.model_name = value.clone(),
@@ -82,27 +82,27 @@ impl Cli {
                         "system_prompt" => config.system_prompt = value.clone(),
                         _ => return Err(ShellmindError::Other(format!("Unknown config key: {}", key))),
                     }
-                    config.save()?;
+                    core::ConfigManager::save_configuration(&config)?;
                     println!("Configuration updated successfully.");
                 }
             },
             Commands::Prompt { text } => {
-                let config = ShellmindConfig::load()?;
-                let indicator = start_thinking_indicator();
-                ui::print_status("Generating command...");
+                let config = core::ConfigManager::load_configuration()?;
+                let indicator = ui.start_thinking_indicator();
+                ui.print_status("Generating command...");
                 let result = match config.api_type {
                     core::ApiType::Rest => generate_command_rest(&config, text, &[]).await,
                     core::ApiType::Grpc => generate_command_grpc(&config, text, &[]).await,
                 };
-                stop_thinking_indicator(indicator);
-                ui::print_status("Command generation complete.");
+                ui.stop_thinking_indicator(indicator);
+                ui.print_status("Command generation complete.");
 
                 match result {
                     Ok(command) => {
-                        print_command(&command);
+                        ui.print_command(&command);
                     }
                     Err(e) => {
-                        print_error(&format!("Error generating command: {}", e));
+                        ui.print_error(&format!("Error generating command: {}", e));
                     }
                 }
             }
