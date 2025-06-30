@@ -39,7 +39,7 @@ Başlamadan önce şunlara sahip olduğunuzdan emin olun:
     Projenin kök dizininde bir `.env` dosyası oluşturun ve Gemini API anahtarınızı ekleyin:
 
     ```dotenv
-    SHELLMIND_API_KEY=BURAYA_GEMINI_API_ANAHTARINIZI_GIRIN
+    SHELLMIND_API_KEY=YOUR_GEMINI_API_KEY_HERE
     ```
 
     Alternatif olarak, bir ortam değişkeni olarak ayarlayabilir veya derledikten sonra CLI aracılığıyla yapılandırabilirsiniz.
