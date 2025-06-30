@@ -1,114 +1,114 @@
-# ✨ Shellmind: Your AI-Powered Command Line Companion ✨
+# ✨ Shellmind: Yapay Zeka Destekli Komut Satırı Yoldaşınız ✨
 
-Shellmind is an **advanced, open-source, terminal-based AI assistant** meticulously crafted in Rust. Designed for developers, system administrators, and power users, Shellmind transforms your command-line experience by bringing intelligent automation and seamless interaction directly to your fingertips.
+Shellmind, Rust ile titizlikle hazırlanmış **gelişmiş, açık kaynaklı, terminal tabanlı bir yapay zeka asistanıdır**. Geliştiriciler, sistem yöneticileri ve komut satırıyla yoğun bir şekilde çalışan herkes için güçlü ve esnek bir araç olarak tasarlanmıştır.
 
-Say goodbye to endless man pages and forgotten commands. With Shellmind, you can simply ask, and it delivers!
+Sonsuz man sayfalarına ve unutulmuş komutlara veda edin. Shellmind ile sadece sorarsınız ve o size cevabı sunar!
 
-## 🚀 Features That Empower You
+## 🚀 Sizi Güçlendiren Özellikler
 
-*   **Intuitive Natural Language Interface:** 🗣️ Translate your natural language queries into precise, executable shell commands. Shellmind understands your intent and provides the right command for the job.
-*   **Flexible AI Integration:** 🧠 Seamlessly connect with cutting-edge AI models. Supports both **RESTful API** and high-performance **gRPC** communication for Gemini models, ensuring you get the best performance and flexibility.
-*   **Dynamic Configuration Management:** ⚙️ Easily view and update your Shellmind settings directly from the CLI. Customize API keys, model names, temperatures, context window sizes, API types, gRPC endpoints, and even the AI's core system prompt.
-*   **Real-time Visual Feedback:** 💡 Stay informed with animated spinners and clear status messages that indicate when Shellmind is thinking, processing, or generating responses.
-*   **Modular & Extensible Architecture:** 🏗️ Built with a clean, modular design in Rust, making it incredibly easy to extend, customize, and integrate new functionalities or AI services.
-*   **Interactive & Non-Interactive Modes:** 💬 Engage in a continuous interactive session for ongoing assistance or use direct CLI commands for quick, one-off queries.
-*   **Cross-Platform Compatibility:** 🌐 Runs flawlessly on Linux, macOS, and Windows, providing a consistent experience across your development environments.
-*   **Placeholder for Advanced Tools:** 🛠️ Includes foundational modules for future enhancements like secure storage and multimedia processing (e.g., video with `ffmpeg`).
+*   **Sezgisel Doğal Dil Arayüzü:** 🗣️ Doğal dil sorgularınızı kesin, yürütülebilir kabuk komutlarına çevirin. Shellmind niyetinizi anlar ve iş için doğru komutu sağlar.
+*   **Esnek Yapay Zeka Entegrasyonu:** 🧠 En son yapay zeka modelleriyle sorunsuz bir şekilde bağlantı kurun. Gemini modelleri için hem **RESTful API** hem de yüksek performanslı **gRPC** iletişimini destekleyerek en iyi performansı ve esnekliği sağlar.
+*   **Dinamik Yapılandırma Yönetimi:** ⚙️ Shellmind ayarlarınızı doğrudan CLI'dan kolayca görüntüleyin ve güncelleyin. API anahtarlarını, model adlarını, sıcaklıkları, bağlam penceresi boyutlarını, API türlerini, gRPC uç noktalarını ve hatta yapay zekanın temel sistem istemini özelleştirin.
+*   **Gerçek Zamanlı Görsel Geri Bildirim:** 💡 Shellmind'in ne zaman düşündüğünü, işlediğini veya yanıtlar ürettiğini gösteren animasyonlu spinner'lar ve net durum mesajlarıyla bilgi sahibi olun.
+*   **Modüler ve Genişletilebilir Mimari:** 🏗️ Rust'ta temiz, modüler bir tasarımla inşa edilmiştir, bu da yeni işlevleri veya yapay zeka hizmetlerini genişletmeyi, özelleştirmeyi ve entegre etmeyi inanılmaz derecede kolaylaştırır.
+*   **Etkileşimli ve Etkileşimli Olmayan Modlar:** 💬 Sürekli yardım için sürekli bir etkileşimli oturuma katılın veya hızlı, tek seferlik sorgular için doğrudan CLI komutlarını kullanın.
+*   **Çapraz Platform Uyumluluğu:** 🌐 Linux, macOS ve Windows'ta sorunsuz çalışır ve geliştirme ortamlarınızda tutarlı bir deneyim sunar.
+*   **Gelişmiş Araçlar için Yer Tutucu:** 🛠️ Güvenli depolama ve multimedya işleme (örn. `ffmpeg` ile video) gibi gelecekteki geliştirmeler için temel modüller içerir.
 
-## ⚡ Getting Started: Unleash Shellmind
+## ⚡ Başlarken: Shellmind'i Serbest Bırakın
 
-### Prerequisites
+### Ön Koşullar
 
-Before you begin, ensure you have:
+Başlamadan önce şunlara sahip olduğunuzdan emin olun:
 
-*   **Rust:** Install Rust via `rustup` from [rustup.rs](https://rustup.rs/).
-*   **A Gemini API Key:** Obtain your API key from the [Google AI Studio](https://aistudio.google.com/).
-*   **Protocol Buffers Compiler (`protoc`):** Required for gRPC support. Install it via your system's package manager (e.g., `sudo apt-get install protobuf-compiler` on Debian/Ubuntu).
+*   **Rust:** `rustup.rs` adresinden `rustup` aracılığıyla Rust'ı yükleyin ([https://rustup.rs/](https://rustup.rs/)).
+*   **Bir Gemini API Anahtarı:** API anahtarınızı [Google AI Studio](https://aistudio.google.com/) adresinden edinin.
+*   **Protocol Buffers Derleyicisi (`protoc`):** gRPC desteği için gereklidir. Sisteminizin paket yöneticisi aracılığıyla yükleyin (örn. Debian/Ubuntu'da `sudo apt-get install protobuf-compiler`).
 
-### Installation
+### Kurulum
 
-1.  **Clone the Repository:**
+1.  **Depoyu Klonlayın:**
 
     ```bash
     git clone https://github.com/your-username/shellmind.git
     cd shellmind
     ```
 
-2.  **Configure Your API Key:**
+2.  **API Anahtarınızı Yapılandırın:**
 
-    Create a `.env` file in the root of the project and add your Gemini API key:
+    Projenin kök dizininde bir `.env` dosyası oluşturun ve Gemini API anahtarınızı ekleyin:
 
     ```dotenv
-    SHELLMIND_API_KEY=YOUR_GEMINI_API_KEY_HERE
+    SHELLMIND_API_KEY=BURAYA_GEMINI_API_ANAHTARINIZI_GIRIN
     ```
 
-    Alternatively, you can set it as an environment variable or configure it via the CLI after building.
+    Alternatif olarak, bir ortam değişkeni olarak ayarlayabilir veya derledikten sonra CLI aracılığıyla yapılandırabilirsiniz.
 
-3.  **Build Shellmind:**
+3.  **Shellmind'i Derleyin:**
 
     ```bash
     cargo build --release
     ```
 
-### Usage
+### Kullanım
 
-#### Interactive Mode
+#### Etkileşimli Mod
 
-For a continuous, interactive AI assistant session:
+Sürekli, etkileşimli bir yapay zeka asistanı oturumu için:
 
 ```bash
 cargo run --bin shellmind
 ```
 
-Type your natural language queries, and Shellmind will provide the corresponding shell commands. Type `exit` to quit.
+Doğal dil sorgularınızı yazın ve Shellmind ilgili kabuk komutlarını sağlayacaktır. Çıkmak için `exit` yazın.
 
-#### Direct Command Line Queries
+#### Doğrudan Komut Satırı Sorguları
 
-For quick, one-off command generation:
+Hızlı, tek seferlik komut üretimi için:
 
 ```bash
-cargo run --bin shellmind prompt --text "list all files in current directory"
+cargo run --bin shellmind prompt --text "mevcut dizindeki tüm dosyaları listele"
 ```
 
-#### CLI Configuration
+#### CLI Yapılandırması
 
-View your current configuration:
+Mevcut yapılandırmanızı görüntüleyin:
 
 ```bash
 cargo run --bin shellmind config show
 ```
 
-Set a configuration value (e.g., change the model or API type):
+Bir yapılandırma değeri ayarlayın (örn. modeli veya API türünü değiştirin):
 
 ```bash
 cargo run --bin shellmind config set model_name gemini-1.5-pro
 cargo run --bin shellmind config set api_type grpc
 cargo run --bin shellmind config set grpc_endpoint https://generativelanguage.googleapis.com
-cargo run --bin shellmind config set system_prompt "You are a helpful assistant for Rust programming."
+cargo run --bin shellmind config set system_prompt "Rust programlama için faydalı bir asistansın."
 ```
 
-## ⚙️ Configuration Options
+## ⚙️ Yapılandırma Seçenekleri
 
-Shellmind's behavior can be customized via a `config.toml` file located in `~/.shellmind/` or through environment variables prefixed with `SHELLMIND_` (e.g., `SHELLMIND_API_KEY`).
+Shellmind'in davranışı, `~/.shellmind/` konumunda bulunan bir `config.toml` dosyası veya `SHELLMIND_` önekiyle başlayan ortam değişkenleri (örn. `SHELLMIND_API_KEY`) aracılığıyla özelleştirilebilir.
 
-Key configuration options include:
+Temel yapılandırma seçenekleri şunları içerir:
 
-*   `api_key`: Your Gemini API key. (Required)
-*   `model_name`: The specific Gemini model to use (e.g., `gemini-1.5-flash`, `gemini-1.5-pro`).
-*   `temperature`: Controls the randomness of the AI's output (0.0 to 1.0). Lower values produce more deterministic results.
-*   `context_window_size`: The maximum number of previous turns to include in the conversation history sent to the AI.
-*   `api_type`: Specifies whether to use `Rest` (default) or `Grpc` for API communication.
-*   `grpc_endpoint`: The gRPC endpoint URL if `api_type` is set to `Grpc`.
-*   `system_prompt`: The initial instruction or persona given to the AI. Customize this to tailor Shellmind's responses.
+*   `api_key`: Gemini API anahtarınız. (Gerekli)
+*   `model_name`: Kullanılacak belirli Gemini modeli (örn. `gemini-1.5-flash`, `gemini-1.5-pro`).
+*   `temperature`: Yapay zekanın çıktısının rastgeleliğini kontrol eder (0.0 ila 1.0). Daha düşük değerler daha deterministik sonuçlar üretir.
+*   `context_window_size`: Yapay zekaya gönderilen konuşma geçmişine dahil edilecek önceki dönüşlerin maksimum sayısı.
+*   `api_type`: API iletişimi için `Rest` (varsayılan) veya `Grpc` kullanılacağını belirtir.
+*   `grpc_endpoint`: `api_type` `Grpc` olarak ayarlanmışsa gRPC uç nokta URL'si.
+*   `system_prompt`: Yapay zekaya verilen başlangıç talimatı veya kişiliği. Shellmind'in yanıtlarını özelleştirmek için bunu ayarlayın.
 
-## 🤝 Contributing
+## 🤝 Katkıda Bulunma
 
-We welcome contributions! If you're passionate about Rust, AI, and command-line tools, feel free to fork the repository, open issues, or submit pull requests. Please refer to the `CONTRIBUTING.md` (coming soon!) for detailed guidelines.
+Katkılarınızı memnuniyetle karşılıyoruz! Rust, yapay zeka ve komut satırı araçları konusunda tutkuluysanız, depoyu çatallamaktan, sorunlar açmaktan veya çekme istekleri göndermekten çekinmeyin. Ayrıntılı yönergeler için lütfen `CONTRIBUTING.md`'ye (yakında!) bakın.
 
-## 📜 License
+## 📜 Lisans
 
-This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for details.
+Bu proje Apache Lisansı 2.0 altında lisanslanmıştır. Ayrıntılar için [LICENSE](LICENSE) dosyasına bakın.
 
 ---
 
-**Shellmind** is an independent project and is not affiliated with Google or the Gemini team. It leverages the publicly available Gemini API for its functionality.
+**Shellmind** bağımsız bir projedir ve Google veya Gemini ekibiyle ilişkili değildir. İşlevselliği için herkese açık Gemini API'sini kullanır.
