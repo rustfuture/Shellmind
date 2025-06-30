@@ -30,7 +30,7 @@ Başlamadan önce şunlara sahip olduğunuzdan emin olun:
 1.  **Depoyu Klonlayın:**
 
     ```bash
-    git clone https://github.com/your-username/shellmind.git
+    git clone https://github.com/rustfuture/Shellmind.git
     cd shellmind
     ```
 
@@ -39,7 +39,7 @@ Başlamadan önce şunlara sahip olduğunuzdan emin olun:
     Projenin kök dizininde bir `.env` dosyası oluşturun ve Gemini API anahtarınızı ekleyin:
 
     ```dotenv
-    SHELLMIND_API_KEY=YOUR_GEMINI_API_KEY_HERE
+    SHELLMIND_API_KEY=YOUR_API_KEY_HERE
     ```
 
     Alternatif olarak, bir ortam değişkeni olarak ayarlayabilir veya derledikten sonra CLI aracılığıyla yapılandırabilirsiniz.
